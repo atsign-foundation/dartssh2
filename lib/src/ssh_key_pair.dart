@@ -273,7 +273,7 @@ class OpenSSHBcryptKdfOptions implements OpenSSHKdfOptions {
   }
 }
 
-abstract class OpenSSHKeyPair implements SSHKeyPair {
+mixin OpenSSHKeyPair implements SSHKeyPair {
   void writeTo(SSHMessageWriter writer);
 
   @override
@@ -663,15 +663,15 @@ class RsaPrivateKey implements SSHKeyPair {
     final coefficient = (sequence.elements[8] as ASN1Integer).valueAsBigInteger;
 
     return RsaPrivateKey(
-      version!,
-      n!,
-      e!,
-      d!,
-      p!,
-      q!,
-      exponent1!,
-      exponent2!,
-      coefficient!,
+      version,
+      n,
+      e,
+      d,
+      p,
+      q,
+      exponent1,
+      exponent2,
+      coefficient,
     );
   }
 
